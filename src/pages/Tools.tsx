@@ -43,7 +43,7 @@ const tools: ToolCard[] = [
     description: "Complete reference for Twitch chat flight commands, viewer controls, and route system.",
     tag: "reference",
     tagColor: "reference",
-    href: "https://docs.kinghive.games/twitch-msfs.html",
+    href: "/tools/twitch-msfs",
   },
   {
     title: "MSFS Core Docs",

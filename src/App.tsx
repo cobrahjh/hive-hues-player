@@ -29,6 +29,7 @@ const App = () => (
             <Route path="/tools/test-runner" element={<TestRunner />} />
             <Route path="/tools/ai-services" element={<AIServices />} />
             <Route path="/tools/voice-access" element={<VoiceAccess />} />
+            <Route path="/tools/twitch-msfs" element={<TwitchMSFS />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
