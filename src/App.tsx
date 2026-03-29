@@ -11,6 +11,7 @@ import TestRunner from "./pages/TestRunner.tsx";
 import AIServices from "./pages/AIServices.tsx";
 import VoiceAccess from "./pages/VoiceAccess.tsx";
 import TwitchMSFS from "./pages/TwitchMSFS.tsx";
+import CoreDocs from "./pages/CoreDocs.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
