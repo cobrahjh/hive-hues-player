@@ -36,7 +36,7 @@ const tools: ToolCard[] = [
     description: "Hit every endpoint across all services. Green means good, red means trouble.",
     tag: "testing",
     tagColor: "testing",
-    href: "#",
+    href: "/tools/test-runner",
   },
   {
     title: "Twitch MSFS Reference",
