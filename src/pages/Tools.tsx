@@ -150,12 +150,6 @@ const Tools = () => {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-border px-6 md:px-12 py-6">
-        <div className="mx-auto max-w-5xl text-center text-xs text-muted-foreground">
-          Powered by <span className="text-primary font-semibold">HIVE</span> · King_Cobra74
-        </div>
-      </footer>
     </div>
   );
 };
