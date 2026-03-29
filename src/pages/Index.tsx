@@ -112,8 +112,12 @@ const Index = () => {
               Welcome to the cockpit! Here's everything you can do in chat — fly the plane, get on camera, talk to the AI copilot, pick where we fly next, and more.
             </p>
           </div>
-          <Link to="/tools">
-            <Settings className="h-5 w-5 text-muted-foreground mt-1 shrink-0 hover:text-primary transition-colors" />
+          <Link
+            to="/tools"
+            className="flex items-center gap-2 text-xs font-medium text-muted-foreground hover:text-primary transition-colors shrink-0 mt-1"
+          >
+            <Settings className="h-4 w-4" />
+            <span className="hidden sm:inline">Internal Tools</span>
           </Link>
         </div>
       </header>

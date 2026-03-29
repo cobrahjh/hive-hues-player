@@ -92,8 +92,12 @@ const Tools = () => {
               Dashboards, test runners, and reference docs for King_Cobra74's stream infrastructure.
             </p>
           </div>
-          <Link to="/">
-            <Settings className="h-5 w-5 text-muted-foreground mt-1 shrink-0 hover:text-primary transition-colors" />
+          <Link
+            to="/"
+            className="flex items-center gap-2 text-xs font-medium text-muted-foreground hover:text-primary transition-colors shrink-0 mt-1"
+          >
+            <Terminal className="h-4 w-4" />
+            <span className="hidden sm:inline">Viewer Commands</span>
           </Link>
         </div>
       </header>
