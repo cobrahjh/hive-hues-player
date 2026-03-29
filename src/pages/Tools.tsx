@@ -29,7 +29,7 @@ const tools: ToolCard[] = [
     description: "Simulate Twitch commands, test TTS/image/video generation live.",
     tag: "dashboard",
     tagColor: "dashboard",
-    href: "#",
+    href: "/tools/service-tester",
   },
   {
     title: "Service Test Runner",
