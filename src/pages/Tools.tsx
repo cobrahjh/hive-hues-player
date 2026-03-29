@@ -69,10 +69,23 @@ const tools: ToolCard[] = [
   },
 ];
 
+const tagColors = ["docs", "dashboard", "testing", "reference"] as const;
+
 const Tools = () => {
+  const [search, setSearch] = useState("");
+  const [activeTag, setActiveTag] = useState<string | null>(null);
+
+  const filtered = tools.filter((t) => {
+    const matchesSearch =
+      !search ||
+      t.title.toLowerCase().includes(search.toLowerCase()) ||
+      t.description.toLowerCase().includes(search.toLowerCase());
+    const matchesTag = !activeTag || t.tag === activeTag;
+    return matchesSearch && matchesTag;
+  });
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Header */}
       <header className="border-b border-border px-6 py-6 md:px-12">
         <div className="mx-auto max-w-5xl">
           <h1 className="text-lg md:text-xl font-bold text-foreground mb-1">Internal Tools</h1>
@@ -82,10 +95,40 @@ const Tools = () => {
         </div>
       </header>
 
-      {/* Tool Cards Grid */}
       <main className="px-6 md:px-12 py-8">
-        <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-4">
-          {tools.map((tool) => {
+        <div className="mx-auto max-w-5xl">
+          {/* Search & Filters */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-6">
+            <div className="relative flex-1 w-full sm:max-w-xs">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <input
+                type="text"
+                placeholder="Search tools..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full rounded-md border border-border bg-card pl-9 pr-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+              />
+            </div>
+            <div className="flex items-center gap-2">
+              {tagColors.map((tag) => (
+                <button
+                  key={tag}
+                  onClick={() => setActiveTag(activeTag === tag ? null : tag)}
+                  className={`px-2.5 py-1 rounded text-xs font-medium transition-colors ${
+                    activeTag === tag
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-primary/15 text-primary hover:bg-primary/25"
+                  }`}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Tool Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {filtered.map((tool) => {
             const isExternal = tool.href.startsWith("http");
             const isPlaceholder = tool.href === "#";
 
