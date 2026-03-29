@@ -39,10 +39,6 @@ const toolItems = [
   { title: "Core Docs", url: "/tools/core-docs", icon: BookOpen },
 ];
 
-const externalItems = [
-  { title: "Core Docs", url: "https://docs.kinghive.games/", icon: BookOpen },
-];
-
 export function AppSidebar() {
   const { state } = useSidebar();
   const collapsed = state === "collapsed";
