@@ -35,10 +35,10 @@ const toolItems = [
   { title: "Test Runner", url: "/tools/test-runner", icon: TestTube2 },
   { title: "AI Services", url: "/tools/ai-services", icon: Bot },
   { title: "Voice Access", url: "/tools/voice-access", icon: Mic },
+  { title: "Twitch MSFS", url: "/tools/twitch-msfs", icon: Plane },
 ];
 
 const externalItems = [
-  { title: "MSFS Reference", url: "https://docs.kinghive.games/twitch-msfs.html", icon: Plane },
   { title: "Core Docs", url: "https://docs.kinghive.games/", icon: BookOpen },
 ];
 
