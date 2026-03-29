@@ -57,7 +57,7 @@ const tools: ToolCard[] = [
     description: "All AI models, voices, and Twitch commands reference.",
     tag: "reference",
     tagColor: "reference",
-    href: "#",
+    href: "/tools/ai-services",
   },
   {
     title: "Voice Access",
