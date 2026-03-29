@@ -1,6 +1,86 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { categories } from "@/data/commands";
-import { Settings, Terminal } from "lucide-react";
+import {
+  Settings,
+  Terminal,
+  Plane,
+  Camera,
+  Globe,
+  Monitor,
+  MessageCircle,
+  Bot,
+  Gamepad2,
+  Navigation,
+  ExternalLink,
+} from "lucide-react";
+
+interface FeatureCard {
+  icon: React.ReactNode;
+  title: string;
+  version: string;
+  description: string;
+  href: string;
+}
+
+const features: FeatureCard[] = [
+  {
+    icon: <Plane className="h-5 w-5" />,
+    title: "Fly the Plane",
+    version: "v2.1",
+    description:
+      "Take the controls! Change heading, altitude, speed, flaps, gear, and lights — all from chat. Everyone shares the same plane, so coordinate or cause beautiful chaos!",
+    href: "https://docs.kinghive.games/twitch-msfs.html",
+  },
+  {
+    icon: <Camera className="h-5 w-5" />,
+    title: "Get On Camera",
+    version: "v1.0",
+    description:
+      "Get your face on stream! Grab a webcam slot and you'll appear in the broadcast for everyone to see. No downloads needed — works right in your browser.",
+    href: "https://docs.kinghive.games/viewer-cam.html",
+  },
+  {
+    icon: <Globe className="h-5 w-5" />,
+    title: "Chat in Any Language",
+    version: "v1.0",
+    description:
+      "Everyone's welcome, no matter what language you speak! Chat in your own language and the bot translates it to English automatically. No commands needed.",
+    href: "https://docs.kinghive.games/twitch-translate.html",
+  },
+  {
+    icon: <Monitor className="h-5 w-5" />,
+    title: "Peek at the Dev Desktop",
+    version: "v1.0",
+    description:
+      "Curious what's happening behind the scenes? Sneak a peek at the developer's desktop for 10 seconds. See the code, the tools, the chaos!",
+    href: "https://docs.kinghive.games/twitch-screen-bot.html",
+  },
+  {
+    icon: <MessageCircle className="h-5 w-5" />,
+    title: "AI Flight Crew",
+    version: "v1.1",
+    description:
+      "Your AI copilot and narrator are on board! Ask questions about the flight, request cinematic narrations, and enjoy automatic commentary on takeoffs, landings, and everything in between.",
+    href: "#ai-flight-crew",
+  },
+  {
+    icon: <Bot className="h-5 w-5" />,
+    title: "Chat with Kit",
+    version: "v2.0",
+    description:
+      "Kit is the stream's AI mascot! Chat naturally and Kit replies in character. Kit also greets new viewers, bows to mods, and can fire sim commands when the AI decides to.",
+    href: "#chat-with-kit",
+  },
+  {
+    icon: <Gamepad2 className="h-5 w-5" />,
+    title: "Quick Sim Controls",
+    version: "v1.0",
+    description:
+      "Simple one-word commands for common flight actions — toggle gear, autopilot, throttle, flaps, lights, cameras, and more. No numbers needed for the basics!",
+    href: "#quick-sim-controls",
+  },
+];
 
 const Index = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -24,17 +104,61 @@ const Index = () => {
                   HIVE
                 </h1>
                 <p className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-muted-foreground font-medium leading-tight">
-                  Viewer Commands
+                  Command Center
                 </p>
               </div>
             </div>
             <p className="text-muted-foreground text-sm md:text-base max-w-2xl mt-4">
-              Everything you can do in chat — flight controls, AI copilot, music requests, and more.
+              Welcome to the cockpit! Here's everything you can do in chat — fly the plane, get on camera, talk to the AI copilot, pick where we fly next, and more.
             </p>
           </div>
-          <Settings className="h-5 w-5 text-muted-foreground mt-1 shrink-0" />
+          <Link to="/tools">
+            <Settings className="h-5 w-5 text-muted-foreground mt-1 shrink-0 hover:text-primary transition-colors" />
+          </Link>
         </div>
       </header>
+
+      {/* Feature Cards */}
+      <section className="px-6 md:px-12 py-8 border-b border-border">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-primary mb-6">
+            What Can You Do?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {features.map((feature) => (
+              <a
+                key={feature.title}
+                href={feature.href}
+                target={feature.href.startsWith("http") ? "_blank" : undefined}
+                rel={feature.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="group rounded-lg border border-border bg-card p-6 hover:border-primary/40 transition-colors"
+              >
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="h-9 w-9 rounded-md bg-secondary flex items-center justify-center text-primary shrink-0">
+                    {feature.icon}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+                        {feature.title}
+                      </h3>
+                      {feature.href.startsWith("http") && (
+                        <ExternalLink className="h-3.5 w-3.5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                      )}
+                    </div>
+                    <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
+                      {feature.version}
+                    </span>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {feature.description}
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Category Tabs */}
       <nav className="border-b border-border px-6 md:px-12 py-4 overflow-x-auto">
