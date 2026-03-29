@@ -64,7 +64,7 @@ const tools: ToolCard[] = [
     description: "Copilot voice system, speech recognition, and TTS configuration.",
     tag: "reference",
     tagColor: "reference",
-    href: "#",
+    href: "/tools/voice-access",
   },
 ];
 
