@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { categories } from "@/data/commands";
 import {
-  Settings,
   Terminal,
   Plane,
   Camera,
@@ -11,7 +9,6 @@ import {
   MessageCircle,
   Bot,
   Gamepad2,
-  Navigation,
   ExternalLink,
 } from "lucide-react";
 
@@ -92,33 +89,12 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="border-b border-border px-6 py-8 md:px-12">
-        <div className="mx-auto max-w-5xl flex items-start justify-between">
-          <div>
-            <div className="flex items-center gap-3 mb-1">
-              <div className="h-8 w-8 rounded-full border-2 border-primary flex items-center justify-center">
-                <div className="h-2.5 w-2.5 rounded-full bg-primary" />
-              </div>
-              <div>
-                <h1 className="text-xl md:text-2xl font-extrabold tracking-widest uppercase text-foreground leading-none">
-                  HIVE
-                </h1>
-                <p className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-muted-foreground font-medium leading-tight">
-                  Command Center
-                </p>
-              </div>
-            </div>
-            <p className="text-muted-foreground text-sm md:text-base max-w-2xl mt-4">
-              Welcome to the cockpit! Here's everything you can do in chat — fly the plane, get on camera, talk to the AI copilot, pick where we fly next, and more.
-            </p>
-          </div>
-          <Link
-            to="/tools"
-            className="flex items-center gap-2 text-xs font-medium text-muted-foreground hover:text-primary transition-colors shrink-0 mt-1"
-          >
-            <Settings className="h-4 w-4" />
-            <span className="hidden sm:inline">Internal Tools</span>
-          </Link>
+      <header className="border-b border-border px-6 py-6 md:px-12">
+        <div className="mx-auto max-w-5xl">
+          <h1 className="text-lg md:text-xl font-bold text-foreground mb-1">Command Center</h1>
+          <p className="text-muted-foreground text-sm max-w-2xl">
+            Welcome to the cockpit! Here's everything you can do in chat — fly the plane, get on camera, talk to the AI copilot, pick where we fly next, and more.
+          </p>
         </div>
       </header>
 
@@ -245,12 +221,6 @@ const Index = () => {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-border px-6 md:px-12 py-6">
-        <div className="mx-auto max-w-5xl text-center text-xs text-muted-foreground">
-          Powered by <span className="text-primary font-semibold">HIVE</span> · King_Cobra74
-        </div>
-      </footer>
     </div>
   );
 };

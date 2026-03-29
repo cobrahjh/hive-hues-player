@@ -1,4 +1,4 @@
-import { ExternalLink, Terminal } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface ToolCard {
@@ -72,33 +72,12 @@ const Tools = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="border-b border-border px-6 py-8 md:px-12">
-        <div className="mx-auto max-w-5xl flex items-start justify-between">
-          <div>
-            <div className="flex items-center gap-3 mb-1">
-              <div className="h-8 w-8 rounded-full border-2 border-primary flex items-center justify-center">
-                <div className="h-2.5 w-2.5 rounded-full bg-primary" />
-              </div>
-              <div>
-                <h1 className="text-xl md:text-2xl font-extrabold tracking-widest uppercase text-foreground leading-none">
-                  HIVE
-                </h1>
-                <p className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-muted-foreground font-medium leading-tight">
-                  Internal Tools
-                </p>
-              </div>
-            </div>
-            <p className="text-muted-foreground text-sm md:text-base max-w-2xl mt-4">
-              Dashboards, test runners, and reference docs for King_Cobra74's stream infrastructure.
-            </p>
-          </div>
-          <Link
-            to="/"
-            className="flex items-center gap-2 text-xs font-medium text-muted-foreground hover:text-primary transition-colors shrink-0 mt-1"
-          >
-            <Terminal className="h-4 w-4" />
-            <span className="hidden sm:inline">Viewer Commands</span>
-          </Link>
+      <header className="border-b border-border px-6 py-6 md:px-12">
+        <div className="mx-auto max-w-5xl">
+          <h1 className="text-lg md:text-xl font-bold text-foreground mb-1">Internal Tools</h1>
+          <p className="text-muted-foreground text-sm max-w-2xl">
+            Dashboards, test runners, and reference docs for King_Cobra74's stream infrastructure.
+          </p>
         </div>
       </header>
 
@@ -171,12 +150,6 @@ const Tools = () => {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-border px-6 md:px-12 py-6">
-        <div className="mx-auto max-w-5xl text-center text-xs text-muted-foreground">
-          Powered by <span className="text-primary font-semibold">HIVE</span> · King_Cobra74
-        </div>
-      </footer>
     </div>
   );
 };

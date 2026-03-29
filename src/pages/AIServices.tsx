@@ -68,7 +68,7 @@ const aiCommands = [
 const AIServices = () => {
   return (
     <ToolPageLayout
-      title="HIVE"
+      
       subtitle="AI Services"
       description="All AI models, voice engines, and Twitch commands powering the stream's intelligence layer."
     >
