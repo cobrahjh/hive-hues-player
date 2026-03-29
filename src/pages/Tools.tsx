@@ -1,10 +1,12 @@
-import { Settings } from "lucide-react";
+import { Settings, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface ToolCard {
   title: string;
   description: string;
   tag: string;
   tagColor: "docs" | "dashboard" | "testing" | "reference";
+  href: string;
 }
 
 const tools: ToolCard[] = [
@@ -13,57 +15,58 @@ const tools: ToolCard[] = [
     description: "Admin & mod reference — all Twitch commands, overlays, features, ports, and tools.",
     tag: "docs",
     tagColor: "docs",
+    href: "/",
   },
   {
     title: "Viewer Guide",
     description: "Viewer-facing command list — flight controls, AI copilot, music requests, routes.",
     tag: "docs",
     tagColor: "docs",
+    href: "/",
   },
   {
     title: "Hive Service Tester",
     description: "Simulate Twitch commands, test TTS/image/video generation live.",
     tag: "dashboard",
     tagColor: "dashboard",
+    href: "#",
   },
   {
     title: "Service Test Runner",
     description: "Hit every endpoint across all services. Green means good, red means trouble.",
     tag: "testing",
     tagColor: "testing",
+    href: "#",
   },
   {
     title: "Twitch MSFS Reference",
     description: "Complete reference for Twitch chat flight commands, viewer controls, and route system.",
     tag: "reference",
     tagColor: "reference",
+    href: "https://docs.kinghive.games/twitch-msfs.html",
   },
   {
     title: "MSFS Core Docs",
     description: "SimConnect integration, Input Events API, available commands, and WebSocket protocol.",
     tag: "reference",
     tagColor: "reference",
+    href: "https://docs.kinghive.games/",
   },
   {
     title: "AI Services",
     description: "All AI models, voices, and Twitch commands reference.",
     tag: "reference",
     tagColor: "reference",
+    href: "#",
   },
   {
     title: "Voice Access",
     description: "Copilot voice system, speech recognition, and TTS configuration.",
     tag: "reference",
     tagColor: "reference",
+    href: "#",
   },
 ];
-
-const tagStyles: Record<string, string> = {
-  docs: "text-primary",
-  dashboard: "text-primary",
-  testing: "text-primary",
-  reference: "bg-primary/15 text-primary px-2 py-0.5 rounded text-xs font-medium",
-};
 
 const Tools = () => {
   return (
@@ -89,35 +92,78 @@ const Tools = () => {
               Dashboards, test runners, and reference docs for King_Cobra74's stream infrastructure.
             </p>
           </div>
-          <Settings className="h-5 w-5 text-muted-foreground mt-1 shrink-0" />
+          <Link to="/">
+            <Settings className="h-5 w-5 text-muted-foreground mt-1 shrink-0 hover:text-primary transition-colors" />
+          </Link>
         </div>
       </header>
 
       {/* Tool Cards Grid */}
       <main className="px-6 md:px-12 py-8">
         <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-4">
-          {tools.map((tool) => (
-            <div
-              key={tool.title}
-              className="group rounded-lg border border-border bg-card p-6 hover:border-primary/40 transition-colors cursor-pointer"
-            >
-              <h3 className="text-base font-semibold text-foreground mb-2">
-                {tool.title}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                {tool.description}
-              </p>
-              {tool.tagColor === "reference" ? (
-                <span className="bg-primary/15 text-primary px-2.5 py-0.5 rounded text-xs font-medium">
-                  {tool.tag}
-                </span>
-              ) : (
-                <span className="text-primary text-sm font-medium">
-                  {tool.tag}
-                </span>
-              )}
-            </div>
-          ))}
+          {tools.map((tool) => {
+            const isExternal = tool.href.startsWith("http");
+            const isPlaceholder = tool.href === "#";
+
+            const cardContent = (
+              <>
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+                    {tool.title}
+                  </h3>
+                  {isExternal && (
+                    <ExternalLink className="h-3.5 w-3.5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
+                  )}
+                </div>
+                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                  {tool.description}
+                </p>
+                {tool.tagColor === "reference" ? (
+                  <span className="bg-primary/15 text-primary px-2.5 py-0.5 rounded text-xs font-medium">
+                    {tool.tag}
+                  </span>
+                ) : (
+                  <span className="text-primary text-sm font-medium">
+                    {tool.tag}
+                  </span>
+                )}
+              </>
+            );
+
+            const className =
+              "group rounded-lg border border-border bg-card p-6 hover:border-primary/40 transition-colors block";
+
+            if (isExternal) {
+              return (
+                <a
+                  key={tool.title}
+                  href={tool.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={className}
+                >
+                  {cardContent}
+                </a>
+              );
+            }
+
+            if (isPlaceholder) {
+              return (
+                <div
+                  key={tool.title}
+                  className={className + " cursor-default opacity-70"}
+                >
+                  {cardContent}
+                </div>
+              );
+            }
+
+            return (
+              <Link key={tool.title} to={tool.href} className={className}>
+                {cardContent}
+              </Link>
+            );
+          })}
         </div>
       </main>
 
