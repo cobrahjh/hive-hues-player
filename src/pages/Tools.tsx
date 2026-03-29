@@ -1,4 +1,5 @@
-import { ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { ExternalLink, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface ToolCard {
