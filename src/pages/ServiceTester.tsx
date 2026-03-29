@@ -48,7 +48,7 @@ const ServiceTester = () => {
 
   return (
     <ToolPageLayout
-      title="HIVE"
+      
       subtitle="Service Tester"
       description="Simulate Twitch commands and test TTS, image, and video generation live. Click play to fire a test."
     >

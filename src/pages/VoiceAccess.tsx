@@ -43,7 +43,7 @@ const voiceCommands = [
 const VoiceAccess = () => {
   return (
     <ToolPageLayout
-      title="HIVE"
+      
       subtitle="Voice Access"
       description="Copilot voice system, speech recognition engine, and TTS configuration reference."
     >

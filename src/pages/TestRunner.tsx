@@ -61,7 +61,7 @@ const TestRunner = () => {
 
   return (
     <ToolPageLayout
-      title="HIVE"
+      
       subtitle="Test Runner"
       description="Hit every endpoint across all services. Green means good, red means trouble."
     >
