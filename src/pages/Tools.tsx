@@ -1,4 +1,4 @@
-import { ExternalLink, Terminal } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface ToolCard {
