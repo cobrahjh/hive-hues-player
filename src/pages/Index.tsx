@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { categories } from "@/data/commands";
 import {
-  Settings,
   Terminal,
   Plane,
   Camera,
@@ -11,7 +9,6 @@ import {
   MessageCircle,
   Bot,
   Gamepad2,
-  Navigation,
   ExternalLink,
 } from "lucide-react";
 
