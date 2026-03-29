@@ -20,8 +20,8 @@ const Index = () => {
                 <div className="h-2.5 w-2.5 rounded-full bg-primary" />
               </div>
               <div>
-                <h1 className="text-xl md:text-2xl font-extrabold tracking-widest text-foreground leading-none">
-                  <span className="font-medium lowercase">h</span>IVE
+                <h1 className="text-xl md:text-2xl font-extrabold tracking-widest uppercase text-foreground leading-none">
+                  HIVE
                 </h1>
                 <p className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-muted-foreground font-medium leading-tight">
                   Viewer Commands
@@ -120,7 +120,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t border-border px-6 md:px-12 py-6">
         <div className="mx-auto max-w-5xl text-center text-xs text-muted-foreground">
-          Powered by <span className="text-primary font-semibold">hIVE</span> · King_Cobra74
+          Powered by <span className="text-primary font-semibold">HIVE</span> · King_Cobra74
         </div>
       </footer>
     </div>
