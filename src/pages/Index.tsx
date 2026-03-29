@@ -15,13 +15,20 @@ const Index = () => {
       <header className="border-b border-border px-6 py-8 md:px-12">
         <div className="mx-auto max-w-5xl flex items-start justify-between">
           <div>
-            <div className="flex items-center gap-3 mb-2">
-              <Gamepad2 className="h-7 w-7 text-primary" />
-              <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
-                King_Cobra74 — <span className="text-primary">Viewer Commands</span>
-              </h1>
+            <div className="flex items-center gap-3 mb-1">
+              <div className="h-8 w-8 rounded-full border-2 border-primary flex items-center justify-center">
+                <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+              </div>
+              <div>
+                <h1 className="text-xl md:text-2xl font-extrabold tracking-widest uppercase text-foreground leading-none">
+                  HIVE
+                </h1>
+                <p className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-muted-foreground font-medium leading-tight">
+                  Viewer Commands
+                </p>
+              </div>
             </div>
-            <p className="text-muted-foreground text-sm md:text-base max-w-2xl">
+            <p className="text-muted-foreground text-sm md:text-base max-w-2xl mt-4">
               Everything you can do in chat — flight controls, AI copilot, music requests, and more.
             </p>
           </div>
