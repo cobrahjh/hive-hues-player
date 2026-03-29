@@ -50,7 +50,7 @@ const tools: ToolCard[] = [
     description: "SimConnect integration, Input Events API, available commands, and WebSocket protocol.",
     tag: "reference",
     tagColor: "reference",
-    href: "https://docs.kinghive.games/",
+    href: "/tools/core-docs",
   },
   {
     title: "AI Services",

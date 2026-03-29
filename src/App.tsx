@@ -11,6 +11,7 @@ import TestRunner from "./pages/TestRunner.tsx";
 import AIServices from "./pages/AIServices.tsx";
 import VoiceAccess from "./pages/VoiceAccess.tsx";
 import TwitchMSFS from "./pages/TwitchMSFS.tsx";
+import CoreDocs from "./pages/CoreDocs.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/tools/ai-services" element={<AIServices />} />
             <Route path="/tools/voice-access" element={<VoiceAccess />} />
             <Route path="/tools/twitch-msfs" element={<TwitchMSFS />} />
+            <Route path="/tools/core-docs" element={<CoreDocs />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

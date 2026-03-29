@@ -36,6 +36,7 @@ const toolItems = [
   { title: "AI Services", url: "/tools/ai-services", icon: Bot },
   { title: "Voice Access", url: "/tools/voice-access", icon: Mic },
   { title: "Twitch MSFS", url: "/tools/twitch-msfs", icon: Plane },
+  { title: "Core Docs", url: "/tools/core-docs", icon: BookOpen },
 ];
 
 const externalItems = [
