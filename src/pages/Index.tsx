@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { categories } from "@/data/commands";
-import { Settings, Terminal, Gamepad2 } from "lucide-react";
+import { Settings, Terminal } from "lucide-react";
 
 const Index = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
