@@ -29,14 +29,14 @@ const tools: ToolCard[] = [
     description: "Simulate Twitch commands, test TTS/image/video generation live.",
     tag: "dashboard",
     tagColor: "dashboard",
-    href: "#",
+    href: "/tools/service-tester",
   },
   {
     title: "Service Test Runner",
     description: "Hit every endpoint across all services. Green means good, red means trouble.",
     tag: "testing",
     tagColor: "testing",
-    href: "#",
+    href: "/tools/test-runner",
   },
   {
     title: "Twitch MSFS Reference",
@@ -57,14 +57,14 @@ const tools: ToolCard[] = [
     description: "All AI models, voices, and Twitch commands reference.",
     tag: "reference",
     tagColor: "reference",
-    href: "#",
+    href: "/tools/ai-services",
   },
   {
     title: "Voice Access",
     description: "Copilot voice system, speech recognition, and TTS configuration.",
     tag: "reference",
     tagColor: "reference",
-    href: "#",
+    href: "/tools/voice-access",
   },
 ];
 
