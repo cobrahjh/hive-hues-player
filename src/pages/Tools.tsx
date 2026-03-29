@@ -191,9 +191,14 @@ const Tools = () => {
               </Link>
             );
           })}
+          {filtered.length === 0 && (
+            <p className="col-span-full text-center text-muted-foreground text-sm py-8">
+              No tools match your search.
+            </p>
+          )}
+          </div>
         </div>
       </main>
-
     </div>
   );
 };
